@@ -206,3 +206,25 @@ Integration with trusted payment gateways (e.g., Stripe, PayPal) ensures that tr
 - **Platform Trustworthiness**: A secure system attracts users and builds long-term credibility.  
 
 ---
+
+---
+
+## ⚙️ CI/CD Pipeline
+
+### What is CI/CD?
+CI/CD (Continuous Integration and Continuous Deployment) is a development practice that automates the process of integrating code changes, running tests, and deploying applications. With CI/CD, every change pushed to the repository is automatically built, tested, and deployed to ensure stability and reliability.
+
+### Why It’s Important
+- **Faster Development Cycle**: Automates repetitive tasks like testing and deployment, allowing developers to focus on building features.  
+- **Improved Code Quality**: Ensures that every code change is tested and validated before reaching production.  
+- **Early Bug Detection**: Automated tests help catch errors early in the development process, reducing costly fixes later.  
+- **Consistent Deployments**: Guarantees reliable and repeatable deployments across environments.  
+
+### Tools Used
+- **GitHub Actions**: For automating builds, tests, and deployments directly from the GitHub repository.  
+- **Docker**: Ensures consistent development and deployment environments using containerization.  
+- **Celery + Redis**: For managing background tasks and testing asynchronous workflows.  
+- **PostgreSQL (with migrations)**: Ensures database schema updates are applied automatically during deployment.  
+
+---
+
