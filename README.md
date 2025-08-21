@@ -54,4 +54,87 @@ To participate in this project, learners should have:
 
 ---
 
-## 📌 Repository Structure (Planned)
+---
+
+## 🗄️ Database Design
+
+The database is designed to capture all core entities of the Airbnb Clone and their relationships, ensuring efficient storage and retrieval.
+
+### Key Entities
+
+#### 1. Users
+- **id** (Primary Key)  
+- **username** (Unique, String)  
+- **email** (Unique, String)  
+- **password_hash** (String, secured)  
+- **date_joined** (Timestamp)  
+
+**Relationships**:  
+- A user can own multiple **properties**.  
+- A user can make multiple **bookings**.  
+- A user can write multiple **reviews**.  
+
+---
+
+#### 2. Properties
+- **id** (Primary Key)  
+- **owner_id** (Foreign Key → Users.id)  
+- **title** (String)  
+- **description** (Text)  
+- **price_per_night** (Decimal)  
+
+**Relationships**:  
+- A property belongs to one **user** (owner).  
+- A property can have multiple **bookings**.  
+- A property can have multiple **reviews**.  
+
+---
+
+#### 3. Bookings
+- **id** (Primary Key)  
+- **user_id** (Foreign Key → Users.id)  
+- **property_id** (Foreign Key → Properties.id)  
+- **check_in_date** (Date)  
+- **check_out_date** (Date)  
+
+**Relationships**:  
+- A booking belongs to one **user**.  
+- A booking belongs to one **property**.  
+- A booking can have one related **payment**.  
+
+---
+
+#### 4. Payments
+- **id** (Primary Key)  
+- **booking_id** (Foreign Key → Bookings.id)  
+- **amount** (Decimal)  
+- **payment_status** (Enum: pending, completed, failed)  
+- **timestamp** (Timestamp)  
+
+**Relationships**:  
+- A payment is linked to one **booking**.  
+
+---
+
+#### 5. Reviews
+- **id** (Primary Key)  
+- **user_id** (Foreign Key → Users.id)  
+- **property_id** (Foreign Key → Properties.id)  
+- **rating** (Integer: 1–5)  
+- **comment** (Text)  
+
+**Relationships**:  
+- A review is written by one **user**.  
+- A review is linked to one **property**.  
+
+---
+
+### 🔗 Entity Relationships Summary
+- **User – Property**: One-to-Many (a user can own many properties).  
+- **User – Booking**: One-to-Many (a user can book many properties).  
+- **User – Review**: One-to-Many (a user can write many reviews).  
+- **Property – Booking**: One-to-Many (a property can have many bookings).  
+- **Property – Review**: One-to-Many (a property can have many reviews).  
+- **Booking – Payment**: One-to-One (each booking has one payment record).  
+
+---
