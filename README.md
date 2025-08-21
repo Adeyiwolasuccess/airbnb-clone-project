@@ -165,3 +165,44 @@ Database indexing and caching strategies are implemented to ensure fast retrieva
 
 ---
 
+---
+
+## 🔐 API Security
+
+Securing the backend APIs is a critical part of building a trustworthy and reliable booking platform. The Airbnb Clone implements multiple layers of security to protect sensitive data, ensure safe transactions, and prevent malicious activities.
+
+### Key Security Measures
+
+#### 1. Authentication
+All users must verify their identity through secure login mechanisms (e.g., JWT or OAuth2).  
+🔑 **Why it’s important**: Ensures only legitimate users can access the platform, protecting sensitive user accounts and personal data.  
+
+#### 2. Authorization
+Role-based access control (RBAC) ensures that users only perform actions they are permitted to. For example, only property owners can modify their own listings.  
+🔑 **Why it’s important**: Prevents unauthorized users from manipulating data such as bookings, payments, or property details.  
+
+#### 3. Data Encryption
+Sensitive information such as passwords and payment details will be encrypted (e.g., hashed passwords with bcrypt, HTTPS/TLS for data in transit).  
+🔑 **Why it’s important**: Protects against data leaks and secures financial and personal information.  
+
+#### 4. Rate Limiting & Throttling
+API endpoints will enforce rate limiting to restrict the number of requests a user can make within a time frame.  
+🔑 **Why it’s important**: Prevents abuse, brute force attacks, and ensures fair usage of system resources.  
+
+#### 5. Input Validation & Sanitization
+All inputs will be validated and sanitized to prevent SQL injection, cross-site scripting (XSS), and other injection-based attacks.  
+🔑 **Why it’s important**: Ensures the system only processes safe and expected data.  
+
+#### 6. Secure Payment Processing
+Integration with trusted payment gateways (e.g., Stripe, PayPal) ensures that transactions are processed safely with PCI-compliant standards.  
+🔑 **Why it’s important**: Protects users and hosts by ensuring secure handling of financial data.  
+
+---
+
+### 🌍 Why API Security is Crucial
+- **User Data Protection**: Keeps personal details (emails, passwords, payment methods) safe from breaches.  
+- **Booking Integrity**: Prevents unauthorized modifications to booking details, ensuring fairness for both guests and hosts.  
+- **Financial Security**: Secures all transactions to build trust and prevent fraud.  
+- **Platform Trustworthiness**: A secure system attracts users and builds long-term credibility.  
+
+---
